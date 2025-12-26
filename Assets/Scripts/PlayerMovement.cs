@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
     Vector2 input;
     private void Start()
     {
-        Debug.Log("doesntwork");
+        Debug.Log("sj");
         rb = GetComponent<Rigidbody2D>();
     }
     private void Update() 
@@ -17,6 +17,20 @@ public class PlayerMovement : MonoBehaviour
     }
     private void FixedUpdate() 
     {    
+		// capture mouse position. We need to convert between pixels and World Unities
+		var mousePosition = Camera.main.ScreenToWorldPoint (Input.mousePosition);
+		// Basicly it's looking to the mouse position. And rotating.
+		Quaternion rot = Quaternion.LookRotation (transform.position - mousePosition,
+		                                         Vector3.forward);
+
+		// LOOKING AT MOUSE
+		// set our gameobject rotation to the calculated one rotation
+		transform.rotation = rot;
+		// doesnt changerotation angles for x, y.
+		transform.eulerAngles = new Vector3 (0, 0, transform.eulerAngles.z);
+		// prevents from "slide"
+		rb.angularVelocity = 0;
+
         rb.linearVelocity = input.normalized * speed;
     }
 }
