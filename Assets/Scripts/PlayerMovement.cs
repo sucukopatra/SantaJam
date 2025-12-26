@@ -5,6 +5,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float speed;
     Rigidbody2D rb;
     Vector2 input;
+    [SerializeField] GameObject pointer;
     private void Start()
     {
         Debug.Log("sj");
@@ -22,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
 		// Basicly it's looking to the mouse position. And rotating.
 		Quaternion rot = Quaternion.LookRotation (transform.position - mousePosition,
 		                                         Vector3.forward);
+        pointer.transform.position = mousePosition;
 
 		// LOOKING AT MOUSE
 		// set our gameobject rotation to the calculated one rotation
@@ -32,5 +34,6 @@ public class PlayerMovement : MonoBehaviour
 		rb.angularVelocity = 0;
 
         rb.linearVelocity = input.normalized * speed;
+        
     }
 }
