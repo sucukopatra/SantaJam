@@ -16,24 +16,24 @@ public class PlayerMovement : MonoBehaviour
         input.x = Input.GetAxisRaw("Horizontal");
         input.y = Input.GetAxisRaw("Vertical");
     }
-    private void FixedUpdate() 
-    {    
-		// capture mouse position. We need to convert between pixels and World Unities
-		var mousePosition = Camera.main.ScreenToWorldPoint (Input.mousePosition);
-		// Basicly it's looking to the mouse position. And rotating.
-		Quaternion rot = Quaternion.LookRotation (transform.position - mousePosition,
-		                                         Vector3.forward);
-        pointer.transform.position = mousePosition;
+private void FixedUpdate() 
+{    
+    // Movement
+    rb.linearVelocity = input.normalized * speed;
+    rb.angularVelocity = 0;
 
-		// LOOKING AT MOUSE
-		// set our gameobject rotation to the calculated one rotation
-		transform.rotation = rot;
-		// doesnt changerotation angles for x, y.
-		transform.eulerAngles = new Vector3 (0, 0, transform.eulerAngles.z);
-		// prevents from "slide"
-		rb.angularVelocity = 0;
+    // Mouse position in world
+    Vector3 mousePos = Input.mousePosition;
+    mousePos.z = -Camera.main.transform.position.z; // set distance from camera to player
+    Vector3 mouseWorld = Camera.main.ScreenToWorldPoint(mousePos);
 
-        rb.linearVelocity = input.normalized * speed;
+    // Pointer follows mouse
+    pointer.transform.position = mouseWorld;
+
+    // Rotate player towards mouse
+    Vector2 direction = mouseWorld - transform.position;
+    float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+    transform.rotation = Quaternion.Euler(0, 0, angle);
+}
         
-    }
 }
