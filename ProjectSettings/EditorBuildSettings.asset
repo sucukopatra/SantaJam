@@ -5,9 +5,15 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/AraSokak1.unity
+    guid: ccb50ba57cc56c04895401641f4dba94
+  - enabled: 1
+    path: Assets/Scenes/AnaSokak1.unity
+    guid: 491a77aab45ba50489d8a70a11f72e26
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 44289cc09f51f44a6834204878a6f226, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
