@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public static PlayerMovement Instance;
     [SerializeField] float speed;
     Rigidbody2D rb;
     SpriteRenderer sr;
@@ -11,6 +12,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] GameObject pointer;
     private void Start()
     {
+        // Instance'ý burada elinle atýyorsun
+        Instance = this;
+
+        // Sahne deðiþince silinmemesi için
+        DontDestroyOnLoad(gameObject);
         Debug.Log("sj");
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
