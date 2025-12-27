@@ -38,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
         // Movement input
         input.x = Input.GetAxisRaw("Horizontal");
         input.y = Input.GetAxisRaw("Vertical");
-        animator.SetFloat("Speed", Mathf.Abs(input.x));
+        animator.SetFloat("Speed", Mathf.Abs(input.magnitude));
 
         // Gun pickup input
         if (canPickUpGun && Input.GetKeyDown(KeyCode.E))

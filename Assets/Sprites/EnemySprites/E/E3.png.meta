@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 9127ce82bf4f38a4eb0d38664691204e
+guid: 6e781b23601b756448a01278ecf45a5a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8366612962264848673
-    second: Walking_Animation2_0
+      213: 739043147375239035
+    second: E3_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,16 +96,29 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Walking_Animation2_0
+      name: E3_0
       rect:
         serializedVersion: 2
-        x: 7
-        y: 7
-        width: 16
+        x: 1
+        y: 8
+        width: 26
         height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -115,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fd6660bc6d1d3eb80800000000000000
-      internalID: -8366612962264848673
+      spriteID: b7fdcf0b3db914a00800000000000000
+      internalID: 739043147375239035
       vertices: []
       indices: 
       edges: []
@@ -135,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Walking_Animation2_0: -8366612962264848673
+      E3_0: 739043147375239035
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
