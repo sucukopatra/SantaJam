@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public static PlayerMovement Instance;
     Gun gun;
     [SerializeField] float speed;
     Rigidbody2D rb;
@@ -14,6 +15,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         gun = GetComponent<Gun>();
