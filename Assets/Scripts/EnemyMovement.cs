@@ -8,12 +8,16 @@ public class EnemyMovement : MonoBehaviour {
     bool chaseplayer=true;
     SpriteRenderer sr;
     [SerializeField] Sprite deadsprite;
+    Animator animator;
+    Collider2D col;
 
     private void Start() 
     {
         rb = GetComponent<Rigidbody2D>();
         player = PlayerMovement.Instance.transform;
         sr = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
+        col = GetComponent<Collider2D>();
     }
 
 	void FixedUpdate(){
@@ -27,6 +31,11 @@ public class EnemyMovement : MonoBehaviour {
             Destroy(other.gameObject);
             chaseplayer = false;
             sr.sprite = deadsprite;
+            animator.enabled=false;
+            col.enabled= false;
+            rb.freezeRotation = true;
+
+
         }
     }
     void ChasePlayer(){
