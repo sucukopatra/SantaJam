@@ -242,6 +242,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelManager
   spawnPoint: {fileID: 1452578397}
+  karakter: {fileID: 0}
 --- !u!4 &702343565
 Transform:
   m_ObjectHideFlags: 0

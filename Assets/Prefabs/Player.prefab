@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5938005309253113231}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -107,6 +107,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   speed: 10
+  gunholding: {fileID: 0}
+  pointer: {fileID: 8472788160452642867, guid: 99a7c37025530dd0aa007152a7a001f4, type: 3}
 --- !u!50 &1833486672403800907
 Rigidbody2D:
   serializedVersion: 5
