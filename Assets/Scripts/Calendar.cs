@@ -19,7 +19,6 @@ public class Calendar : MonoBehaviour
          if (other.CompareTag("player"))
          {
              canBeOpened = true;
-             Debug.Log(canBeOpened);
          }
     }
 
@@ -28,7 +27,6 @@ public class Calendar : MonoBehaviour
         if (other.CompareTag("player"))
         {
             canBeOpened = false;
-            Debug.Log(canBeOpened);
             calendarContent.SetActive(false);
         }
     }
