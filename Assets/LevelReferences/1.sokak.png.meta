@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 971583fb03889844394080faca464c07
+guid: ad7bd4e9252aced40b8ea8f3047052ac
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1502654867666475847
-    second: 2.sokak_0
+      213: -8905180923085104470
+    second: 1.sokak_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,11 +96,24 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 2.sokak_0
+      name: 1.sokak_0
       rect:
         serializedVersion: 2
         x: 0
@@ -115,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9b46ab8fb5f752be0800000000000000
-      internalID: -1502654867666475847
+      spriteID: aaa5de2d1217a6480800000000000000
+      internalID: -8905180923085104470
       vertices: []
       indices: 
       edges: []
@@ -135,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      2.sokak_0: -1502654867666475847
+      1.sokak_0: -8905180923085104470
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

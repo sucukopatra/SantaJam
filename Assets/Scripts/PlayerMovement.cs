@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public static PlayerMovement Instance;
+    public static PlayerMovement Instance { get; private set; }  // read-only outside
+
     Gun gun;
     [SerializeField] float speed;
     Rigidbody2D rb;
@@ -12,11 +13,20 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] GameObject pointer;
     Collider2D nearbyGun;
     bool canPickUpGun = false;
+    public bool justTeleported;
 
-    private void Start()
+    private void Awake()
     {
+        // Proper singleton pattern
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject); // destroy duplicates
+            return;
+        }
+
         Instance = this;
         DontDestroyOnLoad(gameObject);
+
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         gun = GetComponent<Gun>();
@@ -41,11 +51,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (other.CompareTag("gun"))
-        {
-            nearbyGun = other;
-            canPickUpGun = true;
-        }
+         if (other.CompareTag("gun"))
+         {
+             nearbyGun = other;
+             canPickUpGun = true;
+         }
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -56,6 +66,7 @@ public class PlayerMovement : MonoBehaviour
             canPickUpGun = false;
         }
     }
+
     private void FixedUpdate() 
     {    
         // Movement
@@ -70,7 +81,7 @@ public class PlayerMovement : MonoBehaviour
         // Pointer follows mouse
         pointer.transform.position = mouseWorld;
 
-        // Rotate player towards mouse i didnt understand a shit
+        // Rotate player towards mouse
         Vector2 direction = mouseWorld - transform.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, angle);

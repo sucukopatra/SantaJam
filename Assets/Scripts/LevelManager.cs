@@ -1,20 +1,26 @@
 using UnityEngine;
+using System.Collections;
 
 public class LevelManager : MonoBehaviour
 {
-    [SerializeField] public Transform spawnPoint; // Baþýna [SerializeField] ekledik
-    [SerializeField] public GameObject karakter;
+    [SerializeField] GameObject spawnPoint;
+    [SerializeField] GameObject player;
 
-    void Start()
+
+    private void Start()
     {
-        if (PlayerMovement.Instance == null) { Instantiate(karakter); }
-
-        if (LevelTeleporter.cameFromTransition && PlayerMovement.Instance != null)
+        if (PlayerMovement.Instance != null)
         {
-            Debug.Log("AAAAAAAAAAAAAA");
-            if (karakter) karakter.SetActive(false);
-            PlayerMovement.Instance.transform.position = spawnPoint.position;
-            LevelTeleporter.cameFromTransition = false;
+            PlayerMovement.Instance.transform.position = spawnPoint.transform.position;
+            StartCoroutine(FalseJustTeleported());
         }
+        else
+        {
+            Instantiate(player);
+        }
+    }
+    IEnumerator FalseJustTeleported(){
+        yield return new WaitForSeconds(1);
+        PlayerMovement.Instance.justTeleported = false;
     }
 }
