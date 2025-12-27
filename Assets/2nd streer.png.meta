@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 66ab6a15bbadaed45b74134a977188f2
+guid: 6f2d7d14136db23488054722ccb32796
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4132861774579814050
-    second: fire hose_0
+      213: -1266997412287334236
+    second: 2nd streer_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 20
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: fire hose_0
+      name: 2nd streer_0
       rect:
         serializedVersion: 2
-        x: 5
-        y: 5
-        width: 22
-        height: 20
+        x: 0
+        y: 0
+        width: 400
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2aece9b13efda5930800000000000000
-      internalID: 4132861774579814050
+      spriteID: 4a8364df098ba6ee0800000000000000
+      internalID: -1266997412287334236
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      fire hose_0: 4132861774579814050
+      2nd streer_0: -1266997412287334236
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
