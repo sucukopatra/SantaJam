@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 6950533841138574509}
   - component: {fileID: 1833486672403800907}
   - component: {fileID: 5938005309253113231}
+  - component: {fileID: 3654861272051963586}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -107,6 +108,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   speed: 10
+  gunholdingsprite: {fileID: -6142374563283994760, guid: d5e141f3f9dee124eafc833b90f65089, type: 3}
+  pointer: {fileID: 8472788160452642867, guid: 99a7c37025530dd0aa007152a7a001f4, type: 3}
 --- !u!50 &1833486672403800907
 Rigidbody2D:
   serializedVersion: 5
@@ -180,3 +183,18 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &3654861272051963586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8179803498918970133}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02598cbf20a20606ca417fa3db379c49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Gun
+  bullet: {fileID: 5592647421781876597, guid: 8a880778c6d58b121b5a29b1ab8b6ff6, type: 3}
+  fireRate: 0.2
+  offsetDistance: 0.5
