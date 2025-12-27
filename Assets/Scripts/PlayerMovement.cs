@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     Collider2D nearbyGun;
     bool canPickUpGun = false;
     public bool justTeleported;
+    [SerializeField] Animator  animator;
 
     private void Awake()
     {
@@ -37,6 +38,7 @@ public class PlayerMovement : MonoBehaviour
         // Movement input
         input.x = Input.GetAxisRaw("Horizontal");
         input.y = Input.GetAxisRaw("Vertical");
+        animator.SetFloat("Speed", Mathf.Abs(input.x));
 
         // Gun pickup input
         if (canPickUpGun && Input.GetKeyDown(KeyCode.E))
