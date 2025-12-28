@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -48,6 +49,11 @@ public class PlayerMovement : MonoBehaviour
         {
             PickUpGun();
         }
+    }
+    private void OnCollisionEnter2D(Collision2D other) {    
+    if(other.gameObject.tag == "enemy"){
+        SceneManager.LoadSceneAsync("FirstHouse");
+    }
     }
 
     private void PickUpGun()
