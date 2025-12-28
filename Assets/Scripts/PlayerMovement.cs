@@ -2,26 +2,28 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public static PlayerMovement Instance { get; private set; }  // read-only outside
+    public static PlayerMovement Instance { get; private set; }
 
     Gun gun;
     [SerializeField] float speed;
     Rigidbody2D rb;
     SpriteRenderer sr;
-    [SerializeField] Sprite gunholdingsprite;
+    // [SerializeField] Sprite gunholdingsprite; // Artýk buna gerek yok, animasyon halledecek
     Vector2 input;
     [SerializeField] GameObject pointer;
     Collider2D nearbyGun;
     bool canPickUpGun = false;
     public bool justTeleported;
-    [SerializeField] Animator  animator;
+    [SerializeField] Animator animator;
+
+    // Silah durumu için yeni deðiþken
+    private bool IsGun = false;
 
     private void Awake()
     {
-        // Proper singleton pattern
         if (Instance != null && Instance != this)
         {
-            Destroy(gameObject); // destroy duplicates
+            Destroy(gameObject);
             return;
         }
 
@@ -35,20 +37,33 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        // Movement input
         input.x = Input.GetAxisRaw("Horizontal");
         input.y = Input.GetAxisRaw("Vertical");
+
+        // Speed parametresini güncelle
         animator.SetFloat("Speed", Mathf.Abs(input.magnitude));
 
-        // Gun pickup input
+        // Silah alma kontrolü
         if (canPickUpGun && Input.GetKeyDown(KeyCode.E))
         {
-            sr.sprite = gunholdingsprite;
-            gun.enabled = true;
-            canPickUpGun = false;
-            pointer.GetComponent<SpriteRenderer>().enabled = true;
-            Destroy(nearbyGun.gameObject);
+            PickUpGun();
         }
+    }
+
+    private void PickUpGun()
+    {
+        Debug.Log("Silah Alýndý!");
+        IsGun = true;
+
+        // Animator'a silahý aldýðýmýzý söylüyoruz
+        animator.SetBool("IsGun", true);
+
+        gun.enabled = true;
+        canPickUpGun = false;
+        pointer.GetComponent<SpriteRenderer>().enabled = true;
+
+        if (nearbyGun != null)
+            Destroy(nearbyGun.gameObject);
     }
 
     private void OnTriggerStay2D(Collider2D other)
@@ -69,23 +84,20 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void FixedUpdate() 
-    {    
-        // Movement
+    private void FixedUpdate()
+    {
         rb.linearVelocity = input.normalized * speed;
         rb.angularVelocity = 0;
 
-        // Mouse position in world
         Vector3 mousePos = Input.mousePosition;
-        mousePos.z = -Camera.main.transform.position.z; // set distance from camera to player
+        mousePos.z = -Camera.main.transform.position.z;
         Vector3 mouseWorld = Camera.main.ScreenToWorldPoint(mousePos);
 
-        // Pointer follows mouse
         pointer.transform.position = mouseWorld;
 
-        // Rotate player towards mouse
         Vector2 direction = mouseWorld - transform.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, angle);
     }
+
 }
