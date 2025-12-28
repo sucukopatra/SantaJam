@@ -3,9 +3,10 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     Rigidbody2D rb;
-    [SerializeField] int speed = 10;
+    int speed = 5;
     void Start()
     {
+        Debug.Log("spawnlandim");
         rb = GetComponent<Rigidbody2D>();
     }
 

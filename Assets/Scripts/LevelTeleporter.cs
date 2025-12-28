@@ -7,8 +7,9 @@ public class LevelTeleporter : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("player"))
+        if (collision.CompareTag("player") && !PlayerMovement.Instance.justTeleported)
         {
+            PlayerMovement.Instance.justTeleported = true;
             SceneManager.LoadScene(targetSceneName);
         }
     }

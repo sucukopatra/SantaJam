@@ -15,7 +15,6 @@ public class PlayerMovement : MonoBehaviour
     bool canPickUpGun = false;
     public bool justTeleported;
     [SerializeField] Animator  animator;
-    public bool died;
 
     private void Awake()
     {
@@ -59,9 +58,6 @@ public class PlayerMovement : MonoBehaviour
              nearbyGun = other;
              canPickUpGun = true;
          }
-        if(other.CompareTag("enemy")){
-            died = true;
-        }
     }
 
     private void OnTriggerExit2D(Collider2D other)
