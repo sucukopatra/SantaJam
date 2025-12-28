@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -49,6 +50,11 @@ public class PlayerMovement : MonoBehaviour
             pointer.GetComponent<SpriteRenderer>().enabled = true;
             Destroy(nearbyGun.gameObject);
         }
+    }
+    private void OnCollisionEnter2D(Collision2D other) {    
+    if(other.gameObject.tag == "enemy"){
+        SceneManager.LoadSceneAsync("FirstHouse");
+    }
     }
 
     private void OnTriggerStay2D(Collider2D other)
