@@ -11,6 +11,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainStreetPart1.unity
     guid: 491a77aab45ba50489d8a70a11f72e26
+  - enabled: 1
+    path: Assets/Scenes/MainStreetPart2.unity
+    guid: bf3cbf239dc077d4d90d46d336d3709d
+  - enabled: 1
+    path: Assets/Scenes/MainStreetPart3.unity
+    guid: f3285895061fe154d8eb7b02f03d8adf
+  - enabled: 1
+    path: "Assets/Scenes/Off\u0131ce.unity"
+    guid: 2c781e10305a1de489854edc78825627
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 44289cc09f51f44a6834204878a6f226, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
