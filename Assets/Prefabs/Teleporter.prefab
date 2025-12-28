@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4620615001557098553}
   - component: {fileID: 5810393617129774465}
   m_Layer: 0
-  m_Name: SpawnPoint
+  m_Name: Teleporter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
